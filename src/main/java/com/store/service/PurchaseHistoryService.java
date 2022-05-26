@@ -1,11 +1,13 @@
 package com.store.service;
 
-import com.store.model.PurchaseHistory;
+import com.store.model.Purchase;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface PurchaseHistoryService {
-    PurchaseHistory savePurchaseHistory(PurchaseHistory purchaseHistory);
+    Purchase savePurchaseHistory(Purchase purchase);
 
-    List<PurchaseHistory> findAllPurchaseByUser(Long userId);
+    List<Purchase> findAllPurchaseByUser(Long userId);
 }
