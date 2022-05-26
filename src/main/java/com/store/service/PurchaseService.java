@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public interface PurchaseHistoryService {
+public interface PurchaseService {
     Purchase savePurchaseHistory(Purchase purchase);
 
     List<Purchase> findAllPurchaseByUser(Long userId);

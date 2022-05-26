@@ -9,8 +9,8 @@ CREATE TABLE `book`
     `title`          varchar(45)         DEFAULT NULL,
     `description`    varchar(25)         DEFAULT NULL,
     `author`         varchar(45)         DEFAULT NULL,
-    `price`          DATE              DEFAULT NULL,
-    `create_time`    varchar(45)         DEFAULT NULL,
+    `price`          DOUBLE              DEFAULT NULL,
+    `create_time`    DATE                DEFAULT NULL,
      PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
@@ -27,13 +27,16 @@ CREATE TABLE `purchase`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
 
-----DROP TABLE IF EXISTS `customer_structured`;
-----CREATE TABLE `customer_structured`
-----(
-----    `id`                    bigint(20)          NOT NULL AUTO_INCREMENT,
-----    `name`                  varchar(45)         DEFAULT NULL,
-----    `fk_contact_phone_id`        bigint(20),
-----     PRIMARY KEY (`id`),
-----     CONSTRAINT `fk_contact_phone` FOREIGN KEY (`fk_contact_phone_id`) REFERENCES `contact_phone` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-----) ENGINE = InnoDB
-----  DEFAULT CHARSET = utf8mb4;
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user`
+(
+    `id`                 bigint(20)          NOT NULL AUTO_INCREMENT,
+    `username`           varchar(45)         DEFAULT NULL,
+    `password`           varchar(20)         DEFAULT NULL,
+    `name`               varchar(20)         DEFAULT NULL,
+    `create_time`        DATE                DEFAULT NULL,
+    `role`               varchar(20)         DEFAULT NULL,
+PRIMARY KEY (`id`),
+     CONSTRAINT `fk_contact_phone` FOREIGN KEY (`fk_contact_phone_id`) REFERENCES `contact_phone` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;

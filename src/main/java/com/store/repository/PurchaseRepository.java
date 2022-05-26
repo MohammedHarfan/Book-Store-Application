@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface PurchaseHistoryRepository extends JpaRepository<Purchase, Long> {
+public interface PurchaseRepository extends JpaRepository<Purchase, Long> {
 
-    @Query(value = "select b.title ,p.price ,p.purchase_Time from Purchase p left join Book b on b.id = p.book_id where p.user_id = :user_id")
+    @Query(value = "select b.title ,p.price ,p.purchaseTime from Purchase p left join Book b on b.id = p.bookId where p.userId = :user_id")
     List<Purchase> findAllPurchaseOfUser(@Param("user_id") Long userId);
 }
 
