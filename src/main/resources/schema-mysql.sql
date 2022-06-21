@@ -36,7 +36,6 @@ CREATE TABLE `user`
     `name`               varchar(20)         DEFAULT NULL,
     `create_time`        DATE                DEFAULT NULL,
     `role`               varchar(20)         DEFAULT NULL,
-PRIMARY KEY (`id`),
-     CONSTRAINT `fk_contact_phone` FOREIGN KEY (`fk_contact_phone_id`) REFERENCES `contact_phone` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

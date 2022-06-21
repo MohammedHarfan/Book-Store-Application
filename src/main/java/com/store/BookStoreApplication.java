@@ -5,8 +5,11 @@ import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -19,7 +22,7 @@ import java.util.Arrays;
 @SpringBootApplication
 @EntityScan(basePackages = "com.store.model")
 @EnableJpaRepositories(basePackages = {"com.store.repository"})
-@ComponentScan(basePackages = {"com.store.repository", "com.store.service"})
+@ComponentScan(basePackages = {"com.store.repository", "com.store.service", "com.store.controller"})
 public class BookStoreApplication {
     @Autowired
     private Environment env;
@@ -34,8 +37,8 @@ public class BookStoreApplication {
         config.setJdbcUrl(env.getProperty("spring.datasource.url"));
         config.setUsername(env.getProperty("spring.datasource.username"));
         config.setPassword(env.getProperty("spring.datasource.password"));
-        config.setMinimumIdle(Integer.valueOf(env.getProperty("spring.datasource.hikari.minimum-idle")));
-        config.setMaximumPoolSize(Integer.valueOf(env.getProperty("spring.datasource.hikari.maximum-pool-size")));
+//        config.setMinimumIdle(Integer.valueOf(env.getProperty("spring.datasource.hikari.minimum-idle")));
+//        config.setMaximumPoolSize(Integer.valueOf(env.getProperty("spring.datasource.hikari.maximum-pool-size")));
         config.setAutoCommit(true);
         return getDataSource(config);
     }
@@ -46,11 +49,11 @@ public class BookStoreApplication {
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
         config.addDataSourceProperty("useServerPrepStmts", "false");
         //config.addDataSourceProperty("useLocalSessionState", "true");
-        config.addDataSourceProperty("rewriteBatchedStatements", "true");
-        config.addDataSourceProperty("cacheResultSetMetadata", "true");
-        config.addDataSourceProperty("cacheServerConfiguration", "true");
-        config.addDataSourceProperty("elideSetAutoCommits", "true");
-        config.addDataSourceProperty("maintainTimeStats", "false");
+//        config.addDataSourceProperty("rewriteBatchedStatements", "true");
+//        config.addDataSourceProperty("cacheResultSetMetadata", "true");
+//        config.addDataSourceProperty("cacheServerConfiguration", "true");
+//        config.addDataSourceProperty("elideSetAutoCommits", "true");
+//        config.addDataSourceProperty("maintainTimeStats", "false");
         return new HikariDataSource(config);
     }
 

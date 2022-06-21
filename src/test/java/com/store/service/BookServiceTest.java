@@ -3,9 +3,7 @@ package com.store.service;
 import com.store.BookStoreApplication;
 import com.store.model.Book;
 import com.store.repository.BookRepository;
-import org.assertj.core.internal.bytebuddy.pool.TypePool;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = BookStoreApplication.class)
