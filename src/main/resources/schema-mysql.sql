@@ -22,7 +22,6 @@ CREATE TABLE `purchase`
     `user_id`       bigint(20)          DEFAULT NULL,
     `book_id`       bigint(20)          DEFAULT NULL,
     `price`         DOUBLE              DEFAULT NULL,
-    `create_time`   DATE                DEFAULT NULL,
      PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

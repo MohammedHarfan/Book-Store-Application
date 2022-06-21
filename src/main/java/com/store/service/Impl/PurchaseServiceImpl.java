@@ -2,6 +2,7 @@ package com.store.service.Impl;
 
 import com.store.model.Purchase;
 import com.store.repository.PurchaseRepository;
+import com.store.repository.projection.PurchaseItem;
 import com.store.service.PurchaseService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +16,7 @@ public class PurchaseServiceImpl implements PurchaseService {
 
     private PurchaseRepository purchaseRepository;
 
-    private static Logger logger = LoggerFactory.getLogger(BookServiceImpl.class);
+    private static Logger logger = LoggerFactory.getLogger(PurchaseServiceImpl.class);
 
     public PurchaseServiceImpl(PurchaseRepository purchaseRepository) {
         this.purchaseRepository = purchaseRepository;
@@ -30,10 +31,8 @@ public class PurchaseServiceImpl implements PurchaseService {
     }
 
     @Override
-    public List<Purchase> findAllPurchaseByUser(Long user_Id) {
-        List<Purchase> purchaseHistory = purchaseRepository.findAllPurchaseOfUser(user_Id);
-        logger.info("Fetched all purchase by user {}", user_Id);
-        return purchaseHistory;
-       // return null;
+    public List<PurchaseItem> findAllPurchaseByUser(Long userId) {
+        logger.info("Purchase by user for id {}", userId);
+        return purchaseRepository.findAllPurchaseOfUser(userId);
     }
 }

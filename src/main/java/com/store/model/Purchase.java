@@ -30,6 +30,16 @@ public class Purchase {
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Book> book;
 
+    public Purchase() {
+
+    }
+    public Purchase(Long id, Long userId, Long bookId, Double price) {
+        this.id = id;
+        this.userId = userId;
+        this.bookId = bookId;
+        this.price = price;
+    }
+
     public Long getId() {
         return id;
     }

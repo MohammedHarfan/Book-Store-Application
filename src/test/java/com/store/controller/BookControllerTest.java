@@ -27,12 +27,6 @@ public class BookControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-    @Autowired
-    private BookController bookController;
-
-    @Autowired
-    private BookService bookService;
-
     @Test
     public void saveBooks() throws Exception {
         Book book = new Book(1L,"Lies of truth", "simple book", "van der sar", 1.00, LocalDateTime.now());

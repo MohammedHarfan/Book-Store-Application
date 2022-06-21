@@ -5,6 +5,7 @@ import com.store.model.Book;
 import com.store.model.Purchase;
 import com.store.repository.BookRepository;
 import com.store.repository.PurchaseRepository;
+import com.store.repository.projection.PurchaseItem;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +55,7 @@ public class PurchaseServiceTest {
         book.setAuthor("Mr.Book");
         book.setPrice(100.0);
         bookRepository.save(book);
-        List<Purchase> actual = purchaseService.findAllPurchaseByUser(2L);
+        List<PurchaseItem> actual = purchaseService.findAllPurchaseByUser(2L);
         assertThat(actual).isNotNull();
     }
 }
