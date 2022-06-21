@@ -22,7 +22,7 @@ public class BookController {
         return new ResponseEntity<>(bookService.saveBook(book), HttpStatus.CREATED);
     }
 
-    @DeleteMapping("{bookId}")
+    @DeleteMapping("/book/delete/{bookId}")
     public ResponseEntity<?> deleteBooks(@RequestBody Long bookId) {
         bookService.deleteBook(bookId);
         return new ResponseEntity<>(HttpStatus.OK);
