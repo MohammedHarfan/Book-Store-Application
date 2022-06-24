@@ -6,10 +6,12 @@ import com.store.repository.UserRepository;
 import com.store.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
 
+@Service("userService")
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;

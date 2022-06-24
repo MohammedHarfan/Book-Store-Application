@@ -2,7 +2,6 @@ package com.store.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.store.model.Book;
-import com.store.service.BookService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
